@@ -1,5 +1,6 @@
 package hu.progmatic.ordertracking_1021.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,4 +25,8 @@ public class Customer {
     @Column(name = "time_of_birth")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthTime;
+
+    @OneToMany(mappedBy = "customer")
+    @JsonBackReference
+    private List<Demand> orders;
 }
