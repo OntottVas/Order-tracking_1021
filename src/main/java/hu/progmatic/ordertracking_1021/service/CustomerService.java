@@ -1,7 +1,9 @@
 package hu.progmatic.ordertracking_1021.service;
 
 import hu.progmatic.ordertracking_1021.model.Customer;
+import hu.progmatic.ordertracking_1021.model.Demand;
 import hu.progmatic.ordertracking_1021.repository.CustomerRepository;
+import hu.progmatic.ordertracking_1021.repository.DemandRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import java.util.NoSuchElementException;
 @AllArgsConstructor
 public class CustomerService {
     private CustomerRepository customerRepository;
+    private DemandRepository demandRepository;
 
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
@@ -40,5 +43,9 @@ public class CustomerService {
 
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
+    }
+
+    public List<Demand> findDemandsByCustomerId(Long id) {
+        return demandRepository.findDemandsByCustomerId(id);
     }
 }

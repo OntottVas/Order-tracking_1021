@@ -10,12 +10,19 @@ CREATE TABLE IF NOT EXISTS customer (
     email VARCHAR(40)
 );
 
+CREATE TABLE IF NOT EXISTS store (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    address VARCHAR(100)
+);
+
 CREATE TABLE IF NOT EXISTS demand (
 	id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    store VARCHAR(100),
+    store_id BIGINT,
     item VARCHAR(150),
     cost INT,
     customer_id BIGINT,
+    FOREIGN KEY (store_id) REFERENCES store(id),
     FOREIGN KEY (customer_id) REFERENCES customer(id)
 );
 
@@ -25,10 +32,16 @@ VALUES ('Geri', 'Bp', '1999-01-01', 'ge@ri.com'),
         ('Teri', 'Bp', '1990-03-01', 'te@ri.com'),
         ('Beni', 'Bp', '1980-04-01', 'be@ni.com');
 
-INSERT INTO demand (store, item, cost, customer_id)
-VALUES ('MediaMarkt', 'Washing Machine', 150000, 1),
-		('MediaMarkt', 'Stove', 250000, 1),
-        ('Pandora', 'Engagement ring', 300000, 2),
-        ('Florist', 'Bouquet of roses', 25000, 2),
-        ('SPAR', 'Toffefee', 4000, 4),
-        ('SPAR', 'Danko red wine', 500, 4);
+INSERT INTO store (name, address)
+VALUES 	('Aldi', 'bp, valami str 5'),
+		('Lidl', 'bp, valami str 5'),
+        ('Spar', 'bp, valami str 5'),
+        ('Mediamarkt', 'bp, valami str 5'),
+        ('Pandora', 'bp, valami str 5');
+
+INSERT INTO demand (store_id, item, cost, customer_id)
+VALUES (4, 'Washing Machine', 150000, 1),
+		(4, 'Stove', 250000, 1),
+        (5, 'Engagement ring', 300000, 2),
+        (3, 'Toffefee', 4000, 4),
+        (3, 'Danko red wine', 500, 4);

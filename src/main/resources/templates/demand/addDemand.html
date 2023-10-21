@@ -7,7 +7,7 @@
 <body>
 <form th:action="@{/addDemand}" method="post">
     <label> Store:
-        <input th:field="*{newDemand.store}" placeholder="" type="text" id="store" title="store">
+        <input th:field="*{newDemand.store.id}" placeholder="" type="number" id="store_id" title="store_id">
     </label>
     <label> Item:
         <input  th:field="*{newDemand.item}" placeholder="" type="text" id="item" title="item">

@@ -14,7 +14,10 @@ public class Demand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String store;
+    @ManyToOne
+    @JoinColumn(name = "store_id")
+    @JsonManagedReference
+    private Store store;
     private String item;
     private Integer cost;
     @ManyToOne

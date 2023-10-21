@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order tracking</title>
+</head>
+<body>
+<header>
+    <a th:href="@{/home}">HOME</a>
+</header>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tr th:each="store : ${stores}">
+        <td th:text="${store.getId()}"></td>
+        <td th:text="${store.getName()}"></td>
+        <td th:text="${store.getAddress()}"></td>
+    </tr>
+</table>
+</body>
+</html>
