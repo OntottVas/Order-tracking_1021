@@ -43,4 +43,10 @@ public class DemandController {
         demandService.deleteDemand(id);
         return "redirect:/demands";
     }
+
+    @GetMapping("/biggestSpender")
+    public String getBiggestSpender(Model model) {
+        model.addAttribute("spender", demandService.findBiggestSpender());
+        return "demand/biggestSpender";
+    }
 }

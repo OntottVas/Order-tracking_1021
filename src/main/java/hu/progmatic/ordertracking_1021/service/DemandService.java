@@ -33,4 +33,8 @@ public class DemandService {
     public void deleteDemands(Long customerId) {
         demandRepository.deleteDemandsByCustomerId(customerId);
     }
+
+    public String findBiggestSpender() {
+        return demandRepository.findBiggestSpender();
+    }
 }
