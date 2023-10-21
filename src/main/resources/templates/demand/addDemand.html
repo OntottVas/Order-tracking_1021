@@ -5,6 +5,22 @@
     <title>Order tracking</title>
 </head>
 <body>
+<form th:action="@{/addDemand}" method="post">
+    <label> Store:
+        <input th:field="*{newDemand.store}" placeholder="" type="text" id="store" title="store">
+    </label>
+    <label> Item:
+        <input  th:field="*{newDemand.item}" placeholder="" type="text" id="item" title="item">
+    </label>
+    <label> Cost:
+        <input  th:field="*{newDemand.cost}" placeholder="" type="number" id="cost" title="cost">
+    </label>
+    <label> Customer id:
+        <input  th:field="*{newDemand.customer.id}" placeholder="" type="number" id="customer_id" title="customer_id">
+    </label>
 
+    <button type="submit">Create</button>
+
+</form>
 </body>
 </html>

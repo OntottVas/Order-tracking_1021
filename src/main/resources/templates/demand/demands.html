@@ -5,6 +5,28 @@
     <title>Order tracking</title>
 </head>
 <body>
-
+<header>
+    <a th:href="@{/home}">HOME</a>
+    <a th:href="@{/addDemand}">Add new order</a>
+    <a th:href="@{/deleteDemand}">Delete order</a>
+</header>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Store</th>
+        <th>Item</th>
+        <th>Cost</th>
+        <th>Customer</th>
+    </tr>
+    </thead>
+    <tr th:each="demand : ${demands}">
+        <td th:text="${demand.getId()}"></td>
+        <td th:text="${demand.getStore()()}"></td>
+        <td th:text="${demand.getItem()}"></td>
+        <td th:text="${demand.getCost()}"></td>
+        <td th:text="${demand.getCustomer().getName()}"></td>
+    </tr>
+</table>
 </body>
 </html>

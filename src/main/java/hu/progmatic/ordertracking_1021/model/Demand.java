@@ -16,7 +16,7 @@ public class Demand {
     private Long id;
     private String store;
     private String item;
-    private int cost;
+    private Integer cost;
     @ManyToOne
     @JoinColumn(name = "customer_id")
     @JsonManagedReference

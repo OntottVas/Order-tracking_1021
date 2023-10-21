@@ -15,11 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CustomerController {
     private CustomerService customerService;
 
-    @GetMapping({"", "/", "/home"})
-    public String getHome() {
-        return "home";
-    }
-
     @GetMapping("/customers")
     public String getCustomers(Model model) {
         model.addAttribute("customers", customerService.getAllCustomers());
