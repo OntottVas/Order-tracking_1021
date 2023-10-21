@@ -25,6 +25,7 @@ public class Customer {
     @Column(name = "time_of_birth")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthTime;
+    private String email;
 
     @OneToMany(mappedBy = "customer")
     @JsonBackReference
