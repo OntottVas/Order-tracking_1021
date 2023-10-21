@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order tracking</title>
+</head>
+<body>
+<header>
+    <a th:href="@{/home}">HOME</a>
+    <a th:href="@{/addCustomer}">Add new customer</a>
+    <a th:href="@{/modifyName}">Modify customer's name</a>
+    <a th:href="@{/modifyEmail}">Modify customer's email</a>
+    <a th:href="@{/deleteCustomer}">Delete customer</a>
+</header>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Place of birth</th>
+        <th>Time of birth</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.getId()}"></td>
+        <td th:text="${customer.getName()}"></td>
+        <td th:text="${customer.getBirthPlace()}"></td>
+        <td th:text="${customer.getBirthTime()}"></td>
+        <td th:text="${customer.getEmail()}"></td>
+    </tr>
+</table>
+</body>
+</html>
