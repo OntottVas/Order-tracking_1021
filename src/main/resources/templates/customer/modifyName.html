@@ -5,6 +5,15 @@
     <title>Order tracking</title>
 </head>
 <body>
+<form th:action="@{/modifyName}" method="post">
+    <label>Guest Id:
+        <input type="number" name="id">
+    </label>
+    <label>New name:
+        <input type="text" name="name">
+    </label>
 
+    <button type="submit">Modify</button>
+</form>
 </body>
 </html>
