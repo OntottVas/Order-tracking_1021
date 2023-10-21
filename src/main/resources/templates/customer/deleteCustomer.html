@@ -5,6 +5,11 @@
     <title>Order tracking</title>
 </head>
 <body>
-
+<form th:action="@{/deleteCustomer}" method="post">
+    <label>Customer id:
+        <input type="number" name="id">
+    </label>
+    <button type="submit">Delete</button>
+</form>
 </body>
 </html>
