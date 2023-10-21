@@ -5,6 +5,23 @@
     <title>Order tracking</title>
 </head>
 <body>
+<form th:action="@{/addCustomer}" method="post">
+    <label> Name:
+        <input th:field="*{newCustomer.name}" placeholder="" type="text" id="name" title="name">
+    </label>
+    <label> Place of birth:
+        <input  th:field="*{newCustomer.birthPlace}" placeholder="" type="text" id="birthPlace" title="birthPlace">
+    </label>
+    <label> Time of birth:
+        <input  th:field="*{newCustomer.birthTime}" placeholder="" type="date" id="birthTime" title="birthTime"
+                value="2023-01-01" min="1901-01-01" max="2023-10-21">
+    </label>
+    <label> Email address:
+        <input  th:field="*{newCustomer.email}" placeholder="" type="text" id="email" title="email">
+    </label>
 
+    <button type="submit">Create</button>
+
+</form>
 </body>
 </html>
