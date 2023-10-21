@@ -33,7 +33,7 @@
             <ul>
                 <li th:each="order : ${customer.getOrders()}">
                     <span th:text="${order.getId()}"></span>,
-                    <span th:text="${order.getStore()}"></span>,
+                    <span th:text="${order.getStore().getName()}"></span>,
                     <span th:text="${order.getItem()}"></span>,
                     <span th:text="${order.getCost()}"></span>;
                 </li>
