@@ -6,13 +6,11 @@
 </head>
 <body>
 <form th:action="@{/deleteDemand}" method="post">
-    <label>Customer id:
-        <input type="number" name="customerId">
-    </label>
     <label>Order id:
         <input type="number" name="id">
     </label>
     <button type="submit">Delete</button>
 </form>
+<a th:href="@{/demands}">Back to Orders</a>
 </body>
 </html>

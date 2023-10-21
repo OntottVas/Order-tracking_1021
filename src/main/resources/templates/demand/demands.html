@@ -22,7 +22,7 @@
     </thead>
     <tr th:each="demand : ${demands}">
         <td th:text="${demand.getId()}"></td>
-        <td th:text="${demand.getStore()()}"></td>
+        <td th:text="${demand.getStore()}"></td>
         <td th:text="${demand.getItem()}"></td>
         <td th:text="${demand.getCost()}"></td>
         <td th:text="${demand.getCustomer().getName()}"></td>

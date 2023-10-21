@@ -1,7 +1,6 @@
 package hu.progmatic.ordertracking_1021.controller;
 
 import hu.progmatic.ordertracking_1021.model.Demand;
-import hu.progmatic.ordertracking_1021.service.CustomerService;
 import hu.progmatic.ordertracking_1021.service.DemandService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @AllArgsConstructor
 public class DemandController {
     private DemandService demandService;
-    private CustomerService customerService;
 
     @GetMapping("/demands")
     public String getDemands(Model model) {
@@ -41,11 +39,8 @@ public class DemandController {
     }
 
     @PostMapping("/deleteDemand")
-    public String deleteDemand(@RequestParam("customerId") Long customerId,
-                               @RequestParam("id") Long id) {
-        if(!customerService.customersHasIt(customerId)) {
-            demandService.deleteDemand(id);
-        }
+    public String deleteDemand(@RequestParam("id") Long id) {
+        demandService.deleteDemand(id);
         return "redirect:/demands";
     }
 }
