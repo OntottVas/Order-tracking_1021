@@ -41,8 +41,4 @@ public class CustomerService {
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
     }
-
-    public boolean customersHasIt(Long id) {
-        return getAllCustomers().contains(getCustomerById(id));
-    }
 }

@@ -29,4 +29,8 @@ public class DemandService {
     public void deleteDemand(Long id) {
         demandRepository.deleteById(id);
     }
+
+    public void deleteDemands(Long customerId) {
+        demandRepository.deleteDemandsByCustomerId(customerId);
+    }
 }

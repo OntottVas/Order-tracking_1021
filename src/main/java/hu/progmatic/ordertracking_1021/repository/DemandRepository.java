@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DemandRepository extends JpaRepository<Demand, Long> {
+
+    void deleteDemandsByCustomerId(Long customerId);
 }
